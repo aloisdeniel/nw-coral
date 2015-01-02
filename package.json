@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://aloisdeniel@bitbucket.org/aloisdeniel/node-webkit-tiny.git"
+    "url": "https://github.com/aloisdeniel/nw-coral"
   },
   "keywords": [
     "node-webkit",
