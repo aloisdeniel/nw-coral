@@ -1,0 +1,36 @@
+{
+  "name": "nw-coral",
+  "version": "0.1.0",
+  "description": "Create simple node-webkit desktop applications without hassle. It isn't intented to replace big user interface frameworks but to make easier and quicker the creation process of small consistent cross-platform apps.",
+  "main": "dist/js/coral.min.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.11.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-jsdoc": "^0.5.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://aloisdeniel@bitbucket.org/aloisdeniel/node-webkit-tiny.git"
+  },
+  "keywords": [
+    "node-webkit",
+    "css",
+    "window",
+    "frameless"
+  ],
+  "author": "Alois Deniel",
+  "license": "MIT"
+}

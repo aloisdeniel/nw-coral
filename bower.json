@@ -1,0 +1,31 @@
+{
+  "name": "nw-coral",
+  "version": "0.1.0",
+  "authors": [
+    "Aloïs Deniel <alois.deniel@gmail.com>"
+  ],
+  "description": "Create simple node-webkit desktop applications without hassle. It isn't intented to replace big user interface frameworks but to make easier and quicker the creation process of small consistent cross-platform apps.",
+  "main": "dist/js/nw-coral.min.js",
+  "keywords": [
+    "node",
+    "webkit"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node-webkit",
+    "node_modules",
+    "bower_components",
+    "src",
+    "screenshots",
+    "examples",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionicons": "~2.0.0",
+    "jquery": "2.1.3",
+    "animate.css": "~3.2.0"
+  }
+}

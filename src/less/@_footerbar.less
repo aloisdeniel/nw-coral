@@ -1,0 +1,38 @@
+#window-footer
+{
+    bottom: 0px;
+    width: 100%;
+    z-index: 1000;
+    position: fixed;
+    height: @footer-height;
+    border-top: 1px solid @footer-border-top;
+    background: @footer-background;
+    padding-left: @button-margin;
+    
+    h2
+    {
+        .centered-y;
+        
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        margin: 0px;
+        font-weight: 100;
+        padding: 0px;
+        color: @title-foreground;
+        font-size: 11px;
+        transform: translateY(-80%);
+    }
+    
+    i
+    {
+        .centered-y;
+        
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        font-weight: 100;
+        padding: 0px;
+        color: @title-foreground;
+        font-size: 16px;
+    }
+}

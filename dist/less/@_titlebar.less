@@ -1,0 +1,211 @@
+/*! 
+    nw-coral
+    Version : 0.1.0
+    Date : 2015-01-02
+    License : MIT
+*/
+
+.windows 
+{
+    #window-title
+    {
+        .logo
+        {
+            left: @button-margin;
+        }
+        
+        .options
+        {
+            right:@button-margin;
+            
+            a
+            {
+                border-radius: 2px;
+            }
+            
+            .close
+            {
+                &:hover
+                {
+                    background: lighten(@title-win-close-color, 10%);   
+                }
+                
+                color: darken(@title-win-close-color, 30%);
+                background: @title-win-close-color;
+                border: 1px solid darken(@title-win-close-color, 10%);
+                right: 0px;   
+            }
+            
+            .maximize
+            {
+                &:hover
+                {
+                    background: lighten(@title-win-maximize-color, 10%);   
+                }
+                
+                color: darken(@title-win-maximize-color, 30%);
+                background: @title-win-maximize-color;
+                border: 1px solid darken(@title-win-maximize-color, 10%);
+                right: 1 * (@title-button-width + @title-button-margin);
+            }
+            
+            .minimize
+            {
+                &:hover
+                {
+                    background: lighten(@title-win-minimize-color, 10%);   
+                }
+                
+                color: darken(@title-win-minimize-color, 30%);
+                background: @title-win-minimize-color;
+                border: 1px solid darken(@title-win-minimize-color, 10%);
+                right: 2 * (@title-button-width + @title-button-margin);
+            }
+        }
+    }
+}
+
+.mac
+{
+    #window-title
+    {
+        .logo
+        {
+            right: @button-margin;
+        }
+        
+        .options
+        { 
+            &:hover a i 
+            {
+                display: block;
+            }
+            
+            left: @button-margin;
+            
+            a i {
+                display: none;
+            }
+            
+            a
+            {
+                border-radius: @title-button-width;
+            }
+            
+            .close
+            {
+                &:hover
+                {
+                    background: lighten(@title-mac-close-color, 10%);   
+                }
+                
+                color: darken(@title-mac-close-color, 20%);
+                background: @title-mac-close-color;
+                border: 1px solid darken(@title-mac-close-color, 10%);
+                left: 0px;
+            }
+            
+            .minimize
+            {
+                &:hover
+                {
+                    background: lighten(@title-mac-minimize-color,10%);   
+                }
+                
+                color: darken(@title-mac-minimize-color, 20%);
+                background: @title-mac-minimize-color;
+                border: 1px solid darken(@title-mac-minimize-color, 10%);
+                left: 1 * (@title-button-width + @title-button-margin);
+            }
+            
+            .maximize
+            {
+                &:hover
+                {
+                    background: lighten(@title-mac-maximize-color, 10%);   
+                }
+                
+                color: darken(@title-mac-maximize-color, 20%);
+                background: @title-mac-maximize-color;
+                border: 1px solid darken(@title-mac-maximize-color, 10%);
+                left: 2 * (@title-button-width + @title-button-margin);
+            }
+        }
+    }
+}
+
+#window-title
+{
+    z-index: 1000;
+    top: 0px;
+    width: 100%;
+    position: fixed;
+    height: @title-height;
+    border-top: 1px solid @title-border-top;
+    border-bottom: 1px solid @title-border-bottom;
+    background: @title-background;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    
+    h1
+    {
+        .centered-y;
+        
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        padding: 0px;
+        margin: 0px;
+        color: @title-foreground;
+        font-size: 14px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .logo
+    {
+        @size: @title-height - 14px;
+
+        .centered-y;
+
+        position: absolute;
+        width: @size;
+        height: @size;
+    }
+    
+    .options
+    {   
+        z-index: 500;
+        top:0;
+        position: absolute;
+        height: @title-height;
+        width: 5 * @title-button-width;
+        
+        .close, .maximize, .minimize
+        { 
+            &:hover
+            {
+                color: #fff;   
+            }
+        }
+        
+        a
+        {           
+	        .centered-y;
+            
+            -webkit-app-region: no-drag;
+            position: absolute;
+            color: @title-button-foreground;
+            text-align: center;
+            
+            width: @title-button-width;
+            height: @title-button-width;
+            vertical-align: middle;
+            
+            i { 
+                display:block;
+                padding-top: 2px;
+                font-size: 8px;
+            }
+        }
+    }
+}

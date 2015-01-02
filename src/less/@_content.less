@@ -1,0 +1,189 @@
+#window-content
+{
+    position: fixed;
+    top: @header-height + @title-height + 3px;
+    bottom: @footer-height + 1px;
+    right: 2px;
+    left: 0px;
+}
+
+#window-content, .popup
+{
+    overflow: auto;
+    background: @content-background;
+    font-family: 'Open Sans', sans-serif;
+    
+    //Scrollbar
+    &::-webkit-scrollbar{
+        width:@content-scrollbar-size;
+        height:@content-scrollbar-size;
+        background-color:rgba(255, 255, 255, 0);
+    } 
+    
+    &::-webkit-scrollbar-thumb{
+        background-color:@content-scrollbar-color;
+        border-radius:10px;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background-color:lighten(@content-scrollbar-color,5%);
+    }
+    &::-webkit-scrollbar-thumb:active{
+        background-color:darken(@content-scrollbar-color,5%);
+    } 
+    
+    a
+    {
+        color: @accent-color;
+        text-decoration: none;
+        &:hover
+        {
+            text-decoration: underline;   
+        }
+    }
+    
+    .tab
+    {
+        padding: 20px; 
+        margin: 0px;
+    }
+    
+    p
+    {
+        color: @content-foreground; 
+        margin-top: 0px;
+    }
+    
+    h1, h2, h3, h4, h5, h6
+    {
+        .raleway-400;
+        color: @accent-color;
+        margin-top: 0px;
+    }
+    
+    h1 { font-size: 3.0em; }
+    h2 { font-size: 2.0em; }
+    h3 { font-size: 1.5em; }
+    h4 { font-size: 1.3em; }
+    h5 { font-size: 1.1em; }
+    h6 { font-size: 1.0em; }
+    
+    .button,
+    button,
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"] {
+      
+      &:hover {
+          text-decoration: none;
+          background: rgba(0, 0, 0, 0.03);
+      }
+      
+      display: inline-block;
+      height: 38px;
+      padding: 0 30px;
+      color: @accent-color;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 34px;
+      letter-spacing: .1rem;
+      text-transform: uppercase; 
+      text-decoration: none;
+      white-space: nowrap;
+      background-color: transparent;
+      border-radius: 4px;
+      border: 1px solid @accent-color;
+      cursor: pointer;
+      box-sizing: border-box; 
+      margin-bottom: 10px;
+    }
+    
+    input[type="email"],
+    input[type="search"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    textarea,
+    select {
+     
+    &:focus {
+      box-shadow: 0 0 2px @accent-color;
+      border: 1px solid @accent-color;
+    }
+    
+    &::-webkit-input-placeholder {
+        color: #D1D1D1;
+    }
+        
+    &:focus::-webkit-input-placeholder {
+        color: @accent-color;
+    }
+      
+      width: 100%;
+      color: @content-foreground;
+      font-family: 'Open Sans', sans-serif;
+      outline: none;
+      height: 34px;
+      padding: 0px 5px;
+      background-color: #fff;
+      border: 1px solid #D1D1D1;
+      border-radius: 4px;
+      box-shadow: none;
+      box-sizing: border-box; 
+      margin-bottom: 10px;
+    }
+    
+    textarea
+    {
+        resize: vertical;   
+    }
+    
+    label,
+    legend {
+      color: @content-foreground;
+      display: block;
+      margin-bottom: 10px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+    }
+}
+
+@media (max-width: (@navigation-min-wide - 1px)) {
+    
+    #window-content
+    {
+        &.with-tabs
+        {
+            bottom: @footer-height + 1px + @navigation-small-height;
+        }
+    }
+    
+    #window-content, .popup
+    {
+        font-size: 12px;  
+    }
+}
+
+@media (min-width: @navigation-min-wide) {
+
+    #window-content
+    {
+        &.with-tabs
+        {
+            left: @navigation-wide-width + 1px;
+            bottom: @footer-height + 1px;
+        }
+    } 
+    
+    #window-content, .popup
+    {
+        font-size: 14px;  
+    }
+}
+
+.tab
+{
+    padding: 20px; 
+}
+        

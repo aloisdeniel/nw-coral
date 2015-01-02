@@ -1,0 +1,13 @@
+{
+  "name": "ns-coral-basic-example",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "frame": false,
+    "position": "center",
+    "width": 450,
+    "height": 500,
+    "min_width": 450,
+    "min_height": 500
+  }
+}

@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <link rel="stylesheet" type="text/css" href="bower_components/ionicons/css/ionicons.min.css" />
+      <link rel="stylesheet" type="text/css" href="bower_components/animate.css/animate.min.css" />
+      
+      <link rel="stylesheet" type="text/css" href="./css/custom.css" />
+      
+      <title>Basic example</title>
+      
+  </head>
+    
+  <body>
+            
+      <div id="window-content">
+          <div class="tab" title="home" icon="ion-home" >
+              <h1 data-draft-text="8/w"></h1>
+              <p data-draft-text="5/s"></p>
+              <h2 data-draft-text="3/w"></h2>
+              <p data-draft-text="5/s"></p>
+          </div>
+          
+          <div class="tab" title="stats" icon="ion-pie-graph" >
+              <h1 data-draft-text="4/w"></h1>
+              <p  data-draft-text="5/s"></p>
+          </div>
+          
+          <div class="tab" title="favorites" icon="ion-star" >
+          
+              <h1 data-draft-text="8/w"></h1>
+              
+              <p data-draft-text="5/s"></p>
+              
+              <div class="row">
+                <div class="col wide-3">
+                    <p data-draft-text="6/s"></p>
+                </div>
+                <div class="col wide-6">
+                    <h5 data-draft-text="6/w"></h5>
+                    <p data-draft-text="5/s"></p>
+                </div>
+                <div class="col wide-3">
+                    <p data-draft-text="5/s"></p>
+                </div>
+              </div>
+              
+              <p data-draft-text="5/s"></p>
+              
+          </div>
+          
+          <div class="tab" title="contact" icon="ion-quote" >
+              
+              <form>
+                  
+                  <div class="row">
+                      <div  class="col wide-6">
+                          <label for="password">Your password</label>
+                          <input id="password" type="password" placeholder="password" />
+                      </div>
+                      <div  class="col wide-6">
+                          <label for="email">Your email</label>
+                          <input id="email" type="email" placeholder="email" />
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                      <label for="why">Why</label>
+                      <select id="why">
+                        <option value="Option 1">Question</option>
+                        <option value="Option 2">Bug</option>
+                      </select>
+                  </div>
+                  
+                  <div class="row">
+                    <label for="description">Your message</label>
+                    <textarea id="description"  class="col wide-12" placeholder="description"></textarea>
+                  </div>
+                  
+              </form>
+              
+              <a href="#" class="button">Send</a>
+          </div>
+      </div>
+      
+      <div id="window-popups">
+        <div id="example-popup" title="My example" class="popup">
+            <h1 data-draft-text="8/w"></h1>
+            <p data-draft-text="20/s"></p>
+            <h2 data-draft-text="3/w"></h2>
+            <p data-draft-text="20/s"></p>
+        </div>
+        <div id="example-popup-2" title="My other example" class="popup">
+            <h1 data-draft-text="8/w"></h1>
+            <p data-draft-text="25/s"></p>
+            <h2 data-draft-text="3/w"></h2>
+            <p data-draft-text="15/s"></p>
+        </div>
+          
+
+      </div>
+            
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="bower_components/roughdraft.js/jquery.roughdraft.min.js"></script>
+      <script> $(window).roughDraft({
+          author: 'lorem',
+          customIpsum: true,
+          customIpsumPath: './bower_components/roughdraft.js/roughdraft.thesaurus.json'
+        });
+      </script>
+      
+      <script type="text/javascript" src="../../dist/js/coral.min.js"></script>
+      <!-- Normally : <script type="text/javascript" src="bower_components/nw-coral/dist/js/coral.min.js"></script> -->
+      
+      <script type="text/javascript" src="js/main.js"></script>
+  </body>
+    
+</html>

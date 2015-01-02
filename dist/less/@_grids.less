@@ -1,0 +1,55 @@
+/*! 
+    nw-coral
+    Version : 0.1.0
+    Date : 2015-01-02
+    License : MIT
+*/
+
+.row
+{
+    margin: 20px 0px;
+    .col
+    {
+        width: 100%; 
+        margin-bottom: 15px;
+        float: left; 
+        box-sizing: border-box;
+    }
+    
+    &:after,
+    { 
+        content: "";
+        display: table;
+        clear: both;
+    }    
+}
+
+@media (min-width: @navigation-min-wide) {
+    
+    .col(@counter) when (@counter > 0)
+    {
+        .col.wide-@{counter} {
+            width: (100% / 12) * @counter; 
+        }
+
+        .col((@counter - 1));
+    }
+
+    .row
+    {
+        .col
+        {
+            padding: 0px 15px;  
+            &:first-child
+            {
+                padding: 0px 15px 0px 0px;  
+            }
+            &:last-child
+            {
+                padding: 0px 0px 0px 15px;  
+            }
+        }
+        
+        .col(12);
+    }
+}

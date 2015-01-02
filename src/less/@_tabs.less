@@ -1,0 +1,126 @@
+@media (max-width: (@navigation-min-wide - 1px)) {
+    
+    #window-navigation
+    {
+        position: fixed;
+        background: @navigation-background;  
+        bottom: @footer-height + 1px;
+        left: 0px;
+        right: 0px;
+        height: @navigation-small-height;
+        text-align: center;
+
+        a
+        {
+            &:hover
+            {
+                color: @accent-color;
+                border-top: 4px solid rgba(255, 255, 255, 0.08);
+                background: rgba(0, 0, 0, 0.05);
+            }
+
+            &.selected
+            {
+                color: #ededed;
+                border-top: 4px solid @accent-color;
+            }
+
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #999;
+            font-size: 13px;
+            display: inline-block;
+            text-decoration: none;
+            height: @navigation-small-height;
+            width: @navigation-small-tab-width;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            i
+            {
+                
+                font-size: 18px;
+                display: inline-block;
+                width: 26px;
+            } 
+            
+            b
+            {                
+                z-index: 5;
+                position: absolute;
+                display: block;
+                border-radius: @navigation-small-notif-size / 2;
+                top: 20%;
+                margin-left: (@navigation-small-tab-width - @navigation-small-notif-size) / 2;
+                width: @navigation-small-notif-size;
+                height: @navigation-small-notif-size;
+                background: @accent-color;
+                color: @accent-color;
+                overflow: hidden;
+            }
+            
+            span
+            {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (min-width: @navigation-min-wide) {
+    
+    
+    #window-navigation
+    {
+        position:  fixed;
+        background: @navigation-background;  
+        border-right: 1px solid #222;
+        top: @header-height + @title-height + 3px;
+        bottom: @footer-height + 1px;
+        left: 0px;
+        width: @navigation-wide-width;
+
+        a
+        {
+            &:hover
+            {
+                color: @accent-color;
+                border-left: 4px solid rgba(255, 255, 255, 0.08);
+                background: rgba(0, 0, 0, 0.05);
+            }
+            
+            &.selected
+            {
+                color: #ededed;
+                border-left: 4px solid @accent-color;
+            }
+            
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            color: #999;
+            font-size: 14px;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            
+            i
+            {
+                font-size: 18px;
+                display: inline-block;
+                width: 26px;
+            }   
+            
+            b
+            {
+                margin-top: 4px;
+                display: block;
+                color: #fff;
+                font-size: 10px;
+                padding: 2px 5px;
+                float: right;
+                border-radius: 10px;
+                background: @accent-color;
+            }
+        }
+    }
+}

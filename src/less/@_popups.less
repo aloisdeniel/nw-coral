@@ -1,0 +1,179 @@
+@popup-margin-y: 20px;
+@popup-margin-x: 25px;
+
+#window-popups {
+
+  &.visible {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+      transition: opacity 0.3s 0s, visibility 0s 0s;
+  }
+
+
+    
+  z-index: 2000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.62);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+ 
+    #window-popups-title
+    {
+        top: @popup-margin-y;
+        left: @popup-margin-x;
+        right: @popup-margin-x;
+        position: fixed;
+        height: @title-height;
+        border-radius: 5px 5px 0 0;
+        border-top: 1px solid @title-border-top;
+        border-bottom: 1px solid @title-border-bottom;
+        background: @title-background;
+
+        h1
+        {
+            .centered-y;
+
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            padding: 0px;
+            margin: 0px;
+            color: @title-foreground;
+            font-size: 14px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .options
+        {   
+            z-index: 500;
+            top:0;
+            position: absolute;
+            height: @title-height;
+            width: 3 * @title-button-width;
+
+            a
+            {
+                &:hover
+                {
+                    color: #fff;
+                }
+
+                .centered-y;
+
+                position: absolute;
+                color: @title-button-foreground;
+                text-align: center;
+
+                width: @title-button-width;
+                height: @title-button-width;
+                vertical-align: middle;
+
+                i { 
+                    display:block;
+                    padding-top: 2px;
+                    font-size: 8px;
+                }
+            }
+        }
+    }
+    
+ .popup {
+     display: none;
+      position: fixed;
+      top: @title-height + @popup-margin-y + 2px;
+      bottom: @popup-margin-y;
+      left: @popup-margin-x;
+      right: @popup-margin-x;
+      padding: 20px;
+      background: #FFF;
+      border-radius: 0 0 5px 5px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-backface-visibility: hidden;
+      -webkit-transition-property: -webkit-transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+    } 
+}
+
+
+.mac #window-popups #window-popups-title .options
+{ 
+    &:hover a i 
+    {
+        display: block;
+    }
+
+    left: @button-margin;
+
+    a i {
+        display: none;
+    }
+
+    a
+    {
+        border-radius: @title-button-width;
+    }
+
+    .close
+    {
+        color: darken(@title-mac-close-color, 20%);
+        background: @title-mac-close-color;
+        border: 1px solid darken(@title-mac-close-color, 10%);
+        left: 0px;
+    }
+}
+
+.windows #window-popups #window-popups-title .options
+{ 
+    right:@button-margin;
+            
+    a
+    {
+        border-radius: 2px;
+    }
+
+    .close
+    {
+        color: darken(@title-win-close-color, 30%);
+        background: @title-win-close-color;
+        border: 1px solid darken(@title-win-close-color, 10%);
+        right: 0px;   
+    }
+
+    .maximize
+    {
+        color: darken(@title-win-maximize-color, 30%);
+        background: @title-win-maximize-color;
+        border: 1px solid darken(@title-win-maximize-color, 10%);
+        right: 1 * (@title-button-width + @title-button-margin);
+    }
+
+    .minimize
+    {
+        color: darken(@title-win-minimize-color, 30%);
+        background: @title-win-minimize-color;
+        border: 1px solid darken(@title-win-minimize-color, 10%);
+        right: 2 * (@title-button-width + @title-button-margin);
+    }
+}
+
+@media (min-width: @navigation-min-wide) {
+
+    #window-popups {
+ 
+        #window-popups-title, .popup
+        {
+            left: 10%;
+            right: 10%;
+        }
+    }
+}
