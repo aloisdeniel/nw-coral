@@ -1,7 +1,7 @@
 #nw-coral
-![./screenshots/mac-wide.png](Screenshot)
+![/screenshots/mac-wide.png](Screenshot)
 
-![./screenshots/win-small.png](Screenshot)
+![/screenshots/win-small.png](Screenshot)
 
 Create simple [node-webkit](https://github.com/rogerwang/node-webkit) desktop applications without hassle. It isn't intented to replace big user interface frameworks but to make easier and quicker the creation process of small consistent cross-platform apps.
 
@@ -117,9 +117,9 @@ A set of UI components is provided by **nw-coral**.
 
 #### Tabs
 
-![./screenshots/tabs-wide.png](Screenshot)
+![/screenshots/tabs-wide.png](Screenshot)
 
-![./screenshots/tabs-small.png](Screenshot)
+![/screenshots/tabs-small.png](Screenshot)
 
 Adds children `div` element in your `#window-content` with `.tab` class for each tab. A `title` and an `icon` (a [ionicon](http://ionicons.com/) class name) properties must be precised for each tab. 
 
@@ -132,7 +132,7 @@ Adds children `div` element in your `#window-content` with `.tab` class for each
           </div>
     </div>
 
-![./screenshots/tabs-notifications.png](Screenshot)
+![/screenshots/tabs-notifications.png](Screenshot)
 
 More over you can add a notification badge on the tab menu by using `updateTabNotifications(tabIndex,value)` on your `coral` object. With no value specified, the badge will be hidden.
 
@@ -140,7 +140,7 @@ More over you can add a notification badge on the tab menu by using `updateTabNo
 
 #### Modal windows
 
-![./screenshots/modal.png](Screenshot)
+![/screenshots/modal.png](Screenshot)
 
 Create a `div` element in your `body` with the `#window-popups` identifier and a children `div` element with `.popup` class for each modal window. A title must be precised for each popup.
 
@@ -157,7 +157,7 @@ Give an id to your `.popup` div in order to show it from javascript.
 
 #### Action bar
 
-![./screenshots/action-bar.png](Screenshot)
+![/screenshots/action-bar.png](Screenshot)
 
 Define action buttons in the header bar by using the `setActionBar(actions)` function on your `Coral` window object.
 
@@ -170,7 +170,7 @@ Define action buttons in the header bar by using the `setActionBar(actions)` fun
     
 #### Menu
 
-![./screenshots/status.png](Screenshot)
+![/screenshots/status.png](Screenshot)
 
 A simple menu button that launches a native menu is added to the header bar when `Coral` window object is instanciated. 
 
@@ -193,7 +193,7 @@ A simple menu button that launches a native menu is added to the header bar when
 
 #### Status
 
-![./screenshots/status.png](Screenshot)
+![/screenshots/status.png](Screenshot)
 
 Update the status icon and message in the footer bar by using the `setStatus(icon,message)` function on your `Coral` window object.
 
@@ -201,7 +201,7 @@ Update the status icon and message in the footer bar by using the `setStatus(ico
     
 #### Loading layer
 
-![./screenshots/loading.png](Screenshot)
+![/screenshots/loading.png](Screenshot)
 
 Add a loading layer by using the `showLoading(message)` function on your `Coral` window object. Hide it with `hideLoading()` function.
 
