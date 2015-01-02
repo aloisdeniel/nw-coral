@@ -1,7 +1,7 @@
 #nw-coral
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/mac-wide.png](Screenshot)
+![screenshot](/screenshots/mac-wide.png)
 
-![/screenshots/win-small.png?raw=true](Screenshot)
+![screenshot](/screenshots/win-small.png)
 
 Create simple [node-webkit](https://github.com/rogerwang/node-webkit) desktop applications without hassle. It isn't intented to replace big user interface frameworks but to make easier and quicker the creation process of small consistent cross-platform apps.
 
@@ -12,19 +12,17 @@ Make sure [nodejs](http://nodejs.org) and [bower](http://bower.io) are installed
 Then, in your project directory, execute the command :
 
 ```bash
-	$ bower install nw-coral
+$ bower install nw-coral
 ```
 	
 It is recommended to create a `bower.json` file for your project and then save dependency :
 
 ```bash
-	$ bower init
-```
+$ bower init
 
-	# Enter all project information to generate a bower.json file ...	
+# Enter all project information to generate a bower.json file ...	
 
-```bash
-	$ bower install nw-coral --save
+$ bower install nw-coral --save
 ```
 
 You are now ready to use **nw-coral** !
@@ -34,32 +32,32 @@ You are now ready to use **nw-coral** !
 After installation, make sure you have configured your node-webkit app for a frameless window. Your `package.json` file should look like this :
 
 ```json
-    {
-      "name": "my-awesome-app",
-      "main": "index.html",
-      "window": {
-        "toolbar": false,
-        "frame": false,
-        "position": "center",
-        "width": 450,
-        "height": 500,
-        "min_width": 450,
-        "min_height": 500
-      }
-    }
+{
+  "name": "my-awesome-app",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "frame": false,
+    "position": "center",
+    "width": 450,
+    "height": 500,
+    "min_width": 450,
+    "min_height": 500
+  }
+}
 ```
 
 Import the nw-coral styles into your `index.html` file :
 
 ```html
-    <link rel="stylesheet" type="text/css" href="bower_components/nw-coral/dist/css/coral.default.min.css" />
+<link rel="stylesheet" type="text/css" href="bower_components/nw-coral/dist/css/coral.default.min.css" />
 ```
     
 Import **JQuery** and the nw-coral script at the end of your `body` tag into `index.html` file :
 
 ```html
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/nw-coral/dist/js/coral.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/nw-coral/dist/js/coral.min.js"></script>
 ```
 
 Create a `div` element in your `body` with the `#window-content` identifier.
@@ -136,9 +134,9 @@ A set of UI components is provided by **nw-coral**.
 
 #### Tabs
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-wide.png](Screenshot)
+![screenshot](/screenshots/tabs-wide.png)
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-small.png](Screenshot)
+![screenshot](/screenshots/tabs-small.png)
 
 Adds children `div` element in your `#window-content` with `.tab` class for each tab. A `title` and an `icon` (a [ionicon](http://ionicons.com/) class name) properties must be precised for each tab. 
 
@@ -153,7 +151,7 @@ Adds children `div` element in your `#window-content` with `.tab` class for each
     </div>
 ```
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-notifications.png](Screenshot)
+![screenshot](/screenshots/tabs-notifications.png)
 
 More over you can add a notification badge on the tab menu by using `updateTabNotifications(tabIndex,value)` on your `coral` object. With no value specified, the badge will be hidden.
 
@@ -163,7 +161,7 @@ More over you can add a notification badge on the tab menu by using `updateTabNo
 
 #### Modal windows
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/modal.png](Screenshot)
+![screenshot](/screenshots/modal.png)
 
 Create a `div` element in your `body` with the `#window-popups` identifier and a children `div` element with `.popup` class for each modal window. A title must be precised for each popup.
 
@@ -182,7 +180,7 @@ Give an id to your `.popup` div in order to show it from javascript.
 
 #### Action bar
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/action-bar.png](Screenshot)
+![screenshot](/screenshots/action-bar.png)
 
 Define action buttons in the header bar by using the `setActionBar(actions)` function on your `Coral` window object.
 
@@ -197,7 +195,7 @@ Define action buttons in the header bar by using the `setActionBar(actions)` fun
     
 #### Menu
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/status.png](Screenshot)
+![screenshot](/screenshots/status.png)
 
 A simple menu button that launches a native menu is added to the header bar when `Coral` window object is instanciated. 
 
@@ -222,7 +220,7 @@ A simple menu button that launches a native menu is added to the header bar when
 
 #### Status
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/status.png](Screenshot)
+![screenshot](/screenshots/status.png)
 
 Update the status icon and message in the footer bar by using the `setStatus(icon,message)` function on your `Coral` window object.
 
@@ -232,7 +230,7 @@ Update the status icon and message in the footer bar by using the `setStatus(ico
     
 #### Loading layer
 
-![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/loading.png](Screenshot)
+![screenshot](/screenshots/loading.png)
 
 Add a loading layer by using the `showLoading(message)` function on your `Coral` window object. Hide it with `hideLoading()` function.
 
