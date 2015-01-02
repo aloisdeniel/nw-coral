@@ -1,5 +1,5 @@
 #nw-coral
-![/screenshots/mac-wide.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/mac-wide.png](Screenshot)
 
 ![/screenshots/win-small.png?raw=true](Screenshot)
 
@@ -11,15 +11,21 @@ Make sure [nodejs](http://nodejs.org) and [bower](http://bower.io) are installed
 
 Then, in your project directory, execute the command :
 
-	bower install nw-coral
+```bash
+	$ bower install nw-coral
+```
 	
 It is recommended to create a `bower.json` file for your project and then save dependency :
 
-	bower init
+```bash
+	$ bower init
+```
 
 	# Enter all project information to generate a bower.json file ...	
 
-	bower install nw-coral --save
+```bash
+	$ bower install nw-coral --save
+```
 
 You are now ready to use **nw-coral** !
 
@@ -27,6 +33,7 @@ You are now ready to use **nw-coral** !
 
 After installation, make sure you have configured your node-webkit app for a frameless window. Your `package.json` file should look like this :
 
+```json
     {
       "name": "my-awesome-app",
       "main": "index.html",
@@ -40,44 +47,53 @@ After installation, make sure you have configured your node-webkit app for a fra
         "min_height": 500
       }
     }
+```
 
 Import the nw-coral styles into your `index.html` file :
 
+```html
     <link rel="stylesheet" type="text/css" href="bower_components/nw-coral/dist/css/coral.default.min.css" />
+```
     
 Import **JQuery** and the nw-coral script at the end of your `body` tag into `index.html` file :
 
+```html
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/nw-coral/dist/js/coral.min.js"></script>
+```
 
 Create a `div` element in your `body` with the `#window-content` identifier.
 
-    <body>
-        <div id="window-content">
-        </div>
-    </body>
+```html
+<body>
+    <div id="window-content">
+    </div>
+</body>
+```
 
 Finaly, create the Coral object that will configure your window just after the previous imports :
 
-    <script type="text/javascript">
-    
-        var gui = require('nw.gui');
+```html
+<script type="text/javascript">
 
-        var menu = new gui.Menu(); 
-     
-        menuItem = new gui.MenuItem({ 
-            type: "normal",                
-            label: "Quitter",              
-            click: function() { }
-        });
+    var gui = require('nw.gui');
 
-        menu.append(menuItem);
-    
-        var coral = new Coral({
-            icon: "img/logo.png",
-            menu: menu
-        });
-    </script>
+    var menu = new gui.Menu(); 
+ 
+    menuItem = new gui.MenuItem({ 
+        type: "normal",                
+        label: "Quitter",              
+        click: function() { }
+    });
+
+    menu.append(menuItem);
+
+    var coral = new Coral({
+        icon: "img/logo.png",
+        menu: menu
+    });
+</script>
+```
 
 ## Themes
 
@@ -87,17 +103,20 @@ You need [LESS](http://lesscss.org/) css processor in order to compile your cust
 
 Create a less file `less/custom.less` and add this content whith `#cb3451` as your custom color :
 
-    @accent-color: #cb3451;
+```less
+@accent-color: #cb3451;
 
-    @coral-folder: "../bower_components/nw-coral/dist";
+@coral-folder: "../bower_components/nw-coral/dist";
 
-    @import "@{coral-folder}/less/theme.default.less";
-    @import "@{coral-folder}/less/coral.less";
-    
+@import "@{coral-folder}/less/theme.default.less";
+@import "@{coral-folder}/less/coral.less";
+```
+
 Then compile it and that's it !
 
-    lessc less/custom.less css/custom.css
-
+```bash
+$ lessc less/custom.less css/custom.css
+```
 ### Custom theme
 
 *TBD*
@@ -117,12 +136,13 @@ A set of UI components is provided by **nw-coral**.
 
 #### Tabs
 
-![/screenshots/tabs-wide.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-wide.png](Screenshot)
 
-![/screenshots/tabs-small.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-small.png](Screenshot)
 
 Adds children `div` element in your `#window-content` with `.tab` class for each tab. A `title` and an `icon` (a [ionicon](http://ionicons.com/) class name) properties must be precised for each tab. 
 
+```html
     <div id="window-content">
           <div class="tab" title="home" icon="ion-home" >
               <p>home content</p>
@@ -131,19 +151,23 @@ Adds children `div` element in your `#window-content` with `.tab` class for each
               <p>favorites content</p>
           </div>
     </div>
+```
 
-![/screenshots/tabs-notifications.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/tabs-notifications.png](Screenshot)
 
 More over you can add a notification badge on the tab menu by using `updateTabNotifications(tabIndex,value)` on your `coral` object. With no value specified, the badge will be hidden.
 
+```js
 	coral.updateTabNotifications(2,6);
+```
 
 #### Modal windows
 
-![/screenshots/modal.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/modal.png](Screenshot)
 
 Create a `div` element in your `body` with the `#window-popups` identifier and a children `div` element with `.popup` class for each modal window. A title must be precised for each popup.
 
+```html
     <body>
         <!-- ... -->
         <div id="window-popups">
@@ -152,28 +176,32 @@ Create a `div` element in your `body` with the `#window-popups` identifier and a
             </div>
         </div>
     </body>
+```
     
 Give an id to your `.popup` div in order to show it from javascript.
 
 #### Action bar
 
-![/screenshots/action-bar.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/action-bar.png](Screenshot)
 
 Define action buttons in the header bar by using the `setActionBar(actions)` function on your `Coral` window object.
 
+```js
     coral.setActionBar([
     {
         name: "email",
         icon: 'ion-email',
         action: function() { console.log('email'); }
     }]);
+```
     
 #### Menu
 
-![/screenshots/status.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/status.png](Screenshot)
 
 A simple menu button that launches a native menu is added to the header bar when `Coral` window object is instanciated. 
 
+```js
     var gui = require('nw.gui');
 
     var menu = new gui.Menu(); 
@@ -190,23 +218,28 @@ A simple menu button that launches a native menu is added to the header bar when
         icon: "img/logo.png",
         menu: menu
     });
+```
 
 #### Status
 
-![/screenshots/status.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/status.png](Screenshot)
 
 Update the status icon and message in the footer bar by using the `setStatus(icon,message)` function on your `Coral` window object.
 
+```js
     coral.setStatus("ion-folder","Status of the current task ...");
+```
     
 #### Loading layer
 
-![/screenshots/loading.png?raw=true](Screenshot)
+![https://raw.github.com/aloisdeniel/nw-coral/master/screenshots/loading.png](Screenshot)
 
 Add a loading layer by using the `showLoading(message)` function on your `Coral` window object. Hide it with `hideLoading()` function.
 
+```js
     coral.showLoading("loading");
     setTimeout(function () { coral.hideLoading(); }, 2000); 
+```
 
 ### Javascript
 
