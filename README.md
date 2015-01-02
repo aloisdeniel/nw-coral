@@ -161,7 +161,7 @@ More over you can add a notification badge on the tab menu by using `updateTabNo
 
 #### Modal windows
 
-![screenshot](/screenshots/modal.png)
+![screenshot](/screenshots/modal-window.png)
 
 Create a `div` element in your `body` with the `#window-popups` identifier and a children `div` element with `.popup` class for each modal window. A title must be precised for each popup.
 
@@ -177,6 +177,10 @@ Create a `div` element in your `body` with the `#window-popups` identifier and a
 ```
     
 Give an id to your `.popup` div in order to show it from javascript.
+
+```js
+	coral.showPopup("mypopup");
+```
 
 #### Action bar
 
